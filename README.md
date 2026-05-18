@@ -79,6 +79,10 @@ Endpoints úteis
 - `GET /` — endpoint simples que indica que a API está rodando
 - `GET /id` — endpoint de debug que imprime o client id carregado
 
+Exemplo de resposta da IA:
+-----------------
+![img.png](img.png)
+
 Formato da resposta de análise
 -----------------------------
 A análise retornada pela IA é mapeada para o `record` Java `RoastAnalysis` com os campos:

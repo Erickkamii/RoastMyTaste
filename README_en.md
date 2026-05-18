@@ -83,6 +83,10 @@ Endpoints (developer/debug)
 - GET /                                  — basic health/info endpoint
 - GET /id                                — debug endpoint printing the client id loaded from config
 
+Example AI Response:
+----------------------
+![img.png](img.png)
+
 Domain / Response format
 ------------------------
 The AI response is mapped to the Java record `RoastAnalysis` (see `src/main/java/.../domain/model/RoastAnalysis.java`) with these fields:
