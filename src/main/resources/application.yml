@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spotify-roaster
+    name: roast-my-taste
 
   threads:
     virtual:
@@ -36,6 +36,9 @@ spring:
 spotify:
   api:
     base-url: https://api.spotify.com/v1
+
+app:
+  frontend-url: ${FRONTEND_URL:http://127.0.0.1:3000}
 
 server:
   port: 8080

@@ -1,8 +1,8 @@
-# SpotifyRoaster
+# Roast My Taste
 
 Descrição
 ---------
-O SpotifyRoaster é uma API backend (sem frontend) que autentica usuários via OAuth do Spotify e gera "roasts" sarcásticos sobre o gosto musical do usuário usando um provedor de IA. O projeto foi concebido como um backend de portfólio, mostrando integração segura com OAuth, consumo de APIs externas e uma arquitetura simples e de fácil manutenção.
+O Roast My Taste é uma API backend (sem frontend) que autentica usuários via OAuth do Spotify e gera "roasts" sarcásticos sobre o gosto musical do usuário usando um provedor de IA. O projeto foi concebido como um backend de portfólio, mostrando integração segura com OAuth, consumo de APIs externas e uma arquitetura simples e de fácil manutenção.
 
 Funcionalidades principais
 --------------------------
