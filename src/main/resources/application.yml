@@ -35,8 +35,7 @@ spring:
 
 spotify:
   api:
-    base-url: https://api.spotify.com
-
+    base-url: https://api.spotify.com/v1
 app:
   frontend-url: ${FRONTEND_URL:http://127.0.0.1:3000}
 
