@@ -23,7 +23,7 @@ spring:
             client-id: ${SPOTIFY_CLIENT_ID}
             client-secret: ${SPOTIFY_SECRET}
             authorization-grant-type: authorization_code
-            redirect-uri: ${SPOTIFY_REDIRECT_URI:http://localhost:8080/login/oauth2/code/spotify}
+            redirect-uri: "${SPOTIFY_REDIRECT_URI:http://localhost:8080/login/oauth2/code/spotify}"
             scope:
               - user-top-read
         provider:
