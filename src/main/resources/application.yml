@@ -48,6 +48,7 @@ server:
         same-site: none
         secure: true
         http-only: true
+      tracking-modes: cookie
   port: 8080
 
 logging:
