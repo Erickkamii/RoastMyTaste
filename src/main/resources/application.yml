@@ -42,12 +42,13 @@ app:
 
 server:
   forward-headers-strategy: framework
-  port: 8080
   servlet:
     session:
       cookie:
+        path: /
         same-site: none
         secure: true
+        http-only: true
 
 logging:
   level:
