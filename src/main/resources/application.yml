@@ -41,6 +41,7 @@ app:
   frontend-url: ${FRONTEND_URL:http://127.0.0.1:3000}
 
 server:
+  forward-headers-strategy: framework
   servlet:
     session:
       cookie:
@@ -53,3 +54,4 @@ logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: TRACE
+    org.springframework.session: TRACE
