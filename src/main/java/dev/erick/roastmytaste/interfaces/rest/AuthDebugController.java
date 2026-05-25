@@ -4,6 +4,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,19 +14,12 @@ import java.util.Map;
 public class AuthDebugController {
 
     @GetMapping("/api/v1/me")
-    public Map<String, Object> me(@AuthenticationPrincipal OAuth2User principal) {
-
-        if (principal == null) {
-            return Map.of("authenticated", false);
-        }
-
+    public Map<String, Object> me(@AuthenticationPrincipal Jwt jwt) {
         return Map.of(
                 "authenticated", true,
-                "spotifyId", principal.getName(),
-                "displayName", principal.getAttribute("display_name"),
-                "email", principal.getAttribute("email"),
-                "images", principal.getAttribute("images"),
-                "authorities", principal.getAuthorities()
+                "spotifyId", jwt.getSubject(),
+                "name", jwt.getClaimAsString("name"),
+                "email", jwt.getClaimAsString("email")
         );
     }
 

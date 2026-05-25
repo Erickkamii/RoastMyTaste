@@ -37,8 +37,12 @@ spotify:
   api:
     base-url: https://api.spotify.com/v1
 
+jwt:
+  secret: ${JWT_SECRET:umaChaveMuitoLongaESeguraComPeloMenos32Caracteres123456}
+  expiration: 86400000 # 24 horas em milissegundos
+
 app:
-  frontend-url: ${FRONTEND_URL:http://127.0.0.1:3000}
+  frontend-url: ${FRONTEND_URL:https://roast-my-taste-demo.vercel.app}
 
 server:
   forward-headers-strategy: framework
