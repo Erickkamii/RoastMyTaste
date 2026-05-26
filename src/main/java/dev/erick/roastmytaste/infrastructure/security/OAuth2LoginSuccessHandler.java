@@ -44,6 +44,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
         cookie.setPath("/");
         cookie.setMaxAge(3600);
         cookie.setAttribute("SameSite", "None");
+        cookie.setDomain("api-roast.erickkami.dev");
 
         response.addCookie(cookie);
 
