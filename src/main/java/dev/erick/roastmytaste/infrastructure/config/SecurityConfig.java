@@ -1,5 +1,6 @@
 package dev.erick.roastmytaste.infrastructure.config;
 
+import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import dev.erick.roastmytaste.infrastructure.security.JwtAuthenticationFilter;
 import dev.erick.roastmytaste.infrastructure.security.OAuth2LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,7 +10,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -68,4 +71,11 @@ public class SecurityConfig {
         SecretKeySpec secretKey = new SecretKeySpec(jwtSecret.getBytes(), "HmacSHA256");
         return NimbusJwtDecoder.withSecretKey(secretKey).build();
     }
+
+    @Bean
+    JwtEncoder jwtEncoder() {
+        SecretKeySpec secretKey = new SecretKeySpec(jwtSecret.getBytes(), "HmacSHA256");
+        return new NimbusJwtEncoder(new ImmutableSecret<>(secretKey));
+    }
+
 }
